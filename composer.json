@@ -1,0 +1,39 @@
+{
+    "name": "cakedc/oauth2-cognito",
+    "description": "Cognito OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "CakeDC",
+            "email": "team@cakedc.com",
+            "homepage": "https://www.cakedc.com"
+        }
+    ],
+    "keywords": [
+        "oauth",
+        "oauth2",
+        "client",
+        "authorization",
+        "authentication",
+        "cognito"
+    ],
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "league/oauth2-client": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8",
+        "mockery/mockery": "~0.9",
+        "squizlabs/php_codesniffer": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CakeDC\\OAuth2\\Client\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CakeDC\\OAuth2\\Client\\Test\\": "tests/src/"
+        }
+    }
+}
