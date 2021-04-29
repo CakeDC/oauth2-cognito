@@ -17,7 +17,7 @@ class CognitoTest extends TestCase
      */
     protected $provider;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->provider = new \CakeDC\OAuth2\Client\Provider\Cognito([
             'clientId' => 'mock_client_id',
@@ -28,7 +28,7 @@ class CognitoTest extends TestCase
         ]);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
         parent::tearDown();
