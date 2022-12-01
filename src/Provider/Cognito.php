@@ -91,6 +91,7 @@ class Cognito extends AbstractProvider
 
     /**
      * @param $region
+     * @return void
      */
     public function setRegion($region)
     {
@@ -107,6 +108,7 @@ class Cognito extends AbstractProvider
 
     /**
      * @param string $hostedDomain
+     * @return void
      */
     public function setHostedDomain($hostedDomain)
     {
@@ -203,6 +205,7 @@ class Cognito extends AbstractProvider
     /**
      * @param ResponseInterface $response
      * @param array|string $data
+     * @return void
      * @throws IdentityProviderException
      */
     protected function checkResponse(ResponseInterface $response, $data)
