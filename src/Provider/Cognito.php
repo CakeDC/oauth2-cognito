@@ -68,7 +68,11 @@ class Cognito extends AbstractProvider
         }
 
         if (!empty($options['scope'])) {
-            $this->scopes = explode($this->getScopeSeparator(), $options['scope']);
+            if (is_array($options['scope'])) {
+                $this->scopes = $options['scope'];
+            } else {
+                $this->scopes = explode($this->getScopeSeparator(), $options['scope']);
+            }
         }
     }
 
