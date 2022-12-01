@@ -102,6 +102,18 @@ class CognitoTest extends TestCase
         $this->assertEquals(['test-scope', 'test-scope-2'], $provider->getScopes());
     }
 
+    public function testSetScopeInConfigAsArray()
+    {
+        $provider = new \CakeDC\OAuth2\Client\Provider\Cognito([
+            'clientId' => 'mock_client_id',
+            'clientSecret' => 'mock_secret',
+            'redirectUri' => 'none',
+            'hostedDomain' => 'mock_hosted_domain',
+            'scope' => ['test-scope', 'test-scope-2']
+        ]);
+        $this->assertEquals(['test-scope', 'test-scope-2'], $provider->getScopes());
+    }
+
     public function testSetHostedDomainInConfig()
     {
         $host = uniqid();
