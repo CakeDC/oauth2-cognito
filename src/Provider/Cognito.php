@@ -145,7 +145,7 @@ class Cognito extends AbstractProvider
      */
     public function getBaseAuthorizationUrl()
     {
-        return $this->getCognitoUrl('/authorize');
+        return $this->getCognitoUrl('/oauth2/authorize');
     }
 
     /**
@@ -154,7 +154,7 @@ class Cognito extends AbstractProvider
      */
     public function getBaseAccessTokenUrl(array $params)
     {
-        return $this->getCognitoUrl('/token');
+        return $this->getCognitoUrl('/oauth2/token');
     }
 
     /**
