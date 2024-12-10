@@ -22,6 +22,7 @@ class Cognito extends AbstractProvider
     use BearerAuthorizationTrait;
 
     const BASE_COGNITO_URL = 'https://%s.auth.%s.amazoncognito.com%s';
+
     /**
      * @var array List of scopes that will be used for authentication.
      *
@@ -35,7 +36,7 @@ class Cognito extends AbstractProvider
      * @var string If set, it will replace default AWS Cognito urls.
      */
     protected $hostedDomain;
-    
+
     /**
      * @var string If set, it will be added to AWS Cognito urls.
      */
@@ -55,7 +56,7 @@ class Cognito extends AbstractProvider
     public function __construct($options = [], array $collaborators = [])
     {
         parent::__construct($options, $collaborators);
-        
+
         if (!empty($options['hostedDomain'])) {
             $this->hostedDomain = $options['hostedDomain'];
         } elseif (!empty($options['cognitoDomain']) && !empty($options['region'])) {
@@ -90,6 +91,7 @@ class Cognito extends AbstractProvider
 
     /**
      * @param $region
+     * @return void
      */
     public function setRegion($region)
     {
@@ -106,6 +108,7 @@ class Cognito extends AbstractProvider
 
     /**
      * @param string $hostedDomain
+     * @return void
      */
     public function setHostedDomain($hostedDomain)
     {
@@ -202,6 +205,7 @@ class Cognito extends AbstractProvider
     /**
      * @param ResponseInterface $response
      * @param array|string $data
+     * @return void
      * @throws IdentityProviderException
      */
     protected function checkResponse(ResponseInterface $response, $data)
@@ -209,10 +213,10 @@ class Cognito extends AbstractProvider
         if (empty($data['error'])) {
             return;
         }
-        
+
         $code = 0;
         $error = $data['error'];
-        
+
         throw new IdentityProviderException($error, $code, $data);
     }
 
